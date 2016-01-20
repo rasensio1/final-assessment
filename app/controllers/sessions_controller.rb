@@ -1,4 +1,4 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController
   def new
   end
 
@@ -14,7 +14,7 @@ class SessionsController < ActionController::Base
   end
 
   def destroy
-    sessions[:user_id] = nil
-    redirect_to '/login'
+    session[:user_id] = nil
+    redirect_to '/'
   end
 end
