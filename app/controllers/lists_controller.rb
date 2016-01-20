@@ -1,7 +1,16 @@
 class ListsController < ApplicationController
   def create
     List.create(list_params)
-    redirect_to :back
+    redirect_to '/' 
+  end
+
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    List.find(params[:id]).update_attributes(list_params)
+    redirect_to '/' 
   end
 
   def destroy
