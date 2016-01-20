@@ -12,7 +12,13 @@
   <%= f.submit "Submit" %>
 <% end %>
 
+<ul>
 <% @user.lists.each do |list| %>
-  <p><%=list.title %></p>
-  <p><%=list.description%></p>
+  <li>
+    <h3><%=list.title %></h3>
+    <h5><%=list.description%></h5>
+    <%=link_to "Edit" %>
+    <%=link_to "Delete", list_path(list.id), method: :delete %>
+  </li>
 <% end %>
+</ul>
