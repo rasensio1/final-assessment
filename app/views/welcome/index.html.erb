@@ -3,7 +3,7 @@
 <% if current_user %>
   <p> <%= "Hello #{current_user.name}"%> </p>
   <%=link_to "Logout", logout_path %>
-  <%= render "layous/user_home" %>
+  <%= render "layouts/user_home" %>
 
 
 <% else %>
